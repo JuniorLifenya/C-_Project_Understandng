@@ -1,0 +1,44 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe build active file with Eigen",
+            "command": "C:\\MinGW\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-I${workspaceFolder}/Learning/eigen-3.4.0",
+                "-std=c++17",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:\\MinGW\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: C:\\MinGW\\bin\\g++.exe"
+        },
+        {
+            "label": "run program",
+            "type": "shell",
+            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        },
+        {
+            "label": "build and run",
+            "type": "shell",
+            "dependsOn": [
+                "C/C++: g++.exe build active file with Eigen",
+                "run program"
+            ],
+            "dependsOrder": "sequence"
+        }
+    ]
+}
