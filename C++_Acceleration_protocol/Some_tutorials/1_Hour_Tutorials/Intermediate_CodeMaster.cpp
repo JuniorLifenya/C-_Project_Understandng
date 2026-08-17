@@ -43,7 +43,8 @@ private:
     // They Always Points Towards something Valid !!!
 
 public: // Even the constructor logic here does not work!
-    ClassA(int& number) : _number(number), _otherObject(10) //Preceeds the Constructor before execution!!!
+    ClassA(int& number) : _number(number), _otherObject(10) // Overrides really C++ Initialization
+    //Preceeds the Constructor before execution!!!
     // We can instead assign values to it 
     // This code here changes what gets invoked BEFORE the CONSTRUCTOR !!!
     // Goes to Costume Initialization and then execution jumps to CONSTRUCTORS
@@ -70,7 +71,7 @@ int main(){
 
     cout << *numerPointer;
 
-    string blegh = "Hey";
+    string blegh = "Hey"; // String has defaut constructors 
 
     PrintString(&blegh); // Here this & is to retrieve the adress of it
     PrintString2(blegh);
