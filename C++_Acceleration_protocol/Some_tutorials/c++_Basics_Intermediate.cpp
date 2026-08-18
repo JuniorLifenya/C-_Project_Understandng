@@ -150,6 +150,17 @@ int main() // Int is the type of value returned by main.
     cout << "The tutorial is over bye bye!\n";
 
     //=========================================================================
+    // =================== Useful Math functions ===========================
+    double x = 3;
+    double y = 4;
+    double z;
+    z = std::max(x,y); // Compares the two values and finds the greater one... here 4 
+    z = pow(2,4); // Two raised to the 4 
+    z = sqrt(9); // Square root function
+    z = abs(-3); // Absolute value 
+    z = round(3.14); // Gives the rounded value...3
+    z = ceil(3.14) // Rounds up to 4 
+    z = floor(3.14) // Rounds down to 3...
     
 
     return 0;
