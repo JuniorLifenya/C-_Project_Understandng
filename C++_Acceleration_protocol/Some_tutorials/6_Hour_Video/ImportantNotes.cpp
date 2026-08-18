@@ -34,5 +34,126 @@ int main()
     double score = correct/(double)questions * 100; // Converts a value of one type to another
     // Implicit = automatic, Explicit = Precede value with new data type (int)
 
+    //=========================================================================
+    // =================== Useful Math functions ===========================
+    double x = 3;
+    double y = 4;
+    double z;
+    z = std::max(x,y); // Compares the two values and finds the greater one... here 4 
+    z = pow(2,4); // Two raised to the 4 
+    z = sqrt(9); // Square root function
+    z = abs(-3); // Absolute value 
+    z = round(3.14); // Gives the rounded value...3
+    z = ceil(3.14) // Rounds up to 4 
+    z = floor(3.14) // Rounds down to 3...
+
+    //=========================================================================
+    // =================== If and else statements ===========================
+
+    int age;
+    std::cout << "Enter age for instance: "
+    std::cin >> age;
+    if(age >= 18)
+    {
+        std::cout << "Welcome";
+    }
+    else if(age < 0 )
+    { // This is checked of course after an if statement as en elif statement...
+        std::cout << " You haven't been born yet bro";
+    }
+    else if(age >= 100)
+    {
+        std::cout << "You are waaay to old";
+    }
+    else
+    {
+        std::cout << "You are not old enough to enter"
+    }
+
+    //=========================================================================
+    // =================== Switches  ===========================
+    // An alternative way to use many "else if" statements 
+    // Compare one value against matching cases
+    int month;
+    std::cout << "Enter the month (weekday)";
+    std::cin >> month;
+    switch(weekDay) // More efficient for several if statements, more efficient and easier to read!
+    {
+        case 1:
+            std::cout << "It is Monday";
+            break;
+        default:
+            std::cout << "Please enter correct number"; 
+
+    }
+    //--------------------------------------------------------------------
+    switch(Grade)
+    {
+        case 'A':
+            std::cout << "Congratulations";
+            break;
+        case 'F':
+            std::cout << "You have to lock in a bit...";
+            break;
+        default:
+            std::cout << "Not a valid grade letter";
+
+    }
+    //==========================================================================
+    // =================== Ternary operator ?:  ===========================
+    // A replacement to using if and else statements
+    // Condition ? expression1 : expression2;
+    int grade;
+    std::cout "What grade did you get?";
+    std::cin >> grade;
+    //--------------------------------------------------------------------
+    grade >= 60 ? std::cout << " You pass" : std::cout << "You failed";
+    number % 2 == 1 ? std::cout << "Odd" : std::cout << "True";
+    
+    bool hungry = true;
+    hungry ? std::cout << "You are Hungry" : std::cout << "You are full";
+    std::cout << (hungry ? "You are Hungry" : "You are full");
+
+    //=========================================================================
+    // =================== Logical Operators: &&, ||, ! =====================
+    // && = check if two conditions are true
+    // || = check if at least one of the two conditions is true
+    // ! = reverse the logical state of its operand
+
+    int temp;
+    std::cout << "Temperature: "
+    std::cin >> temp;
+
+    if (temp > 0 && temp < 30) // Both must be true to execute the code. Check several conditions
+    { 
+        std::cout << "The temperature is good!";
+    }
+    else
+    {
+        std::cout << "The temperator is bad !";
+    }
+    //--------------------------------------------------------------------
+    if (temp <= 0 || temp >= 30)
+    {
+        std::cout << "The temperature is bad!";
+    }
+    else 
+    {
+        std::cout << "The temperature is good!"; 
+    }
+    //--------------------------------------------------------------------
+    int temp;
+    bool sunny = false;
+    if(!sunny){ // Checking to see if it is NOT sunny outside
+        std::cout << "It is cloudy outside"; 
+    }
+    else {
+        std::cout << "It is sunny outside"
+    }
+    //=========================================================================
+    // =================== Useful String Methods =====================
+
+
+
     return 0;
 }
