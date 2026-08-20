@@ -152,8 +152,43 @@ int main()
     }
     //=========================================================================
     // =================== Useful String Methods =====================
+    std::string name;
+    std::getline(std::cin, name); // Here we get a name and imediately assign it to the variable
+
+    if (name.length() > 12){
+        // In this methode we directly get the length of the string with .length
+    }
+
+    if (name.empty()){
+        // Returns if a string is empty or not...check if someone actually inserts user inputs!
+        std::cout << "You did not enter your name:"
+    };
+
+    name.clear(); // This methode simply clears something
+    name.append(); // Add a string to the end of another string
+    std::cout << name.at(1); // Character at the index 1 
+
+    name.insert(0, "@"); // Inserts a character at the index 
+    std::cout << name.find();
+    name.erase(0,3) // Eliminates the first three characters
+
+    if(name.empty() // Simpy checks if the name is empty or not)
+    while(name.empty()){
+        std::cout << "Enter jour name"
+        std::getline(std::cin, name);
+    } // Same for the code
 
 
+    
+    //=========================================================================
+    // =================== For and While loops =====================
+    do{
+        std::cout <<"Enter a poisitig number"
+        std::cin >number;
+        // do some code first,
+        // Then Repeat agin if conditions are true
+    }while(name < 0);
 
+    
     return 0;
 }
