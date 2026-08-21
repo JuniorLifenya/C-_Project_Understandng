@@ -172,7 +172,7 @@ int main()
     std::cout << name.find();
     name.erase(0,3) // Eliminates the first three characters
 
-    if(name.empty() // Simpy checks if the name is empty or not)
+    if(name.empty()) // Simpy checks if the name is empty or not)
     while(name.empty()){
         std::cout << "Enter jour name"
         std::getline(std::cin, name);
@@ -182,12 +182,30 @@ int main()
     
     //=========================================================================
     // =================== For and While loops =====================
-    do{
+    int number;
+
+    while (number < 0){
+        std::cout << "Enter Positive number";
+        std::cin >> counter;
+    }
+
+    do{  // Allows use to do some code once, THEN repeat IT again if some condition is true
         std::cout <<"Enter a poisitig number"
         std::cin >number;
         // do some code first,
         // Then Repeat agin if conditions are true
     }while(name < 0);
+    // --------------------------------------------------------------------------
+    // A loop that executes code a specified amount of time 
+
+    for (int i = 1; i <= 3; ++i) // We can Increment i+=3 for instance and so on with decrementation
+    {
+        std::cout << "Happy New Year";
+    }
+    // -------------------- Break for switches...------------------
+    // -------------------- Continue skips the current iteration---
+
+    
 
     
     return 0;
