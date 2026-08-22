@@ -1,5 +1,15 @@
 #include <ctime>
 #include <iostream>
+#include <cstdlib>
+#include <string>
+
+// Functions are blocks of re-usable codes
+// Especially if you think some code with purpose is gonna be re-used
+
+void happyBirthday(std::string name);// No return types HappyBirthday() calls it 
+// A lot of people like to declare it first,
+// then have it after the main int function
+// Void has to be changed to match the datatype the function returns 
 
 int main()
 {
@@ -31,33 +41,48 @@ int main()
 
 
     // =================== Random Guesser Game =================
-    int num;
-    int guess;
-    int tries = 0;
+    // int num;
+    // int guess;
+    // int tries = 0;
 
-    srand(time(NULL)); // Again create a random seed
-    num = (rand() % 100) +1;
+    // srand(time(NULL)); // Again create a random seed
+    // num = (rand() % 100) +1;
 
-    std::cout << "########## Number Game Started ######### \n";
+    // std::cout << "########## Number Game Started ######### \n";
 
-     do{
-        std::cout << "Enter a guess between (1-100) \n";
-        std::cin >>guess;
-        tries++;
+    // do{
+    //     std::cout << "Enter a guess between (1-100) \n";
+    //     std::cin >>guess;
+    //     tries++;
 
-        if(guess > num){
-            std::cout << "Too high \n";
-        }
-        else if(guess < num){
-            std::cout << "Too low\n";
-        }
-        else{
-            std::cout << "CORECT" << tries << "\n";
+    //     if(guess > num){
+    //         std::cout << "Too high \n";
+    //     }
+    //     else if(guess < num){
+    //         std::cout << "Too low\n";
+    //     }
+    //     else{
+    //         std::cout << "CORECT" << tries << "\n";
 
-        }
-        }while (guess !=num);
-        std::cout << "#### WINNER WINNER !!! ####";
-    std::cout << "########## Number Game ENDED #########";
+    //     }
+    // }while (guess !=num);   
+    
+    // std::cout << "#### WINNER WINNER !!! ####";
+    // std::cout << "########## Number Game ENDED #########";
 
-     return 0;
+    //==================== Function Calling ===============
+    std::string name = "Bro";
+    happyBirthday(name);
+
+    return 0;
+}
+
+// Function definition
+void happyBirthday(std::string name)
+{
+    std::cout << "Happy Birthday to " << name << "\n";
+    std::cout << "Happy Birthday to " << name << "\n";
+    std::cout << "Happy Birthday to " << name << "\n";
+    std::cout << "Happy Birthday Dear " << name << "\n";
+    std::cout << "Happy Birthday to " << name << "\n\n";
 }
