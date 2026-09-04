@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
 
-
-
 int main (){
 
     // First Rows and Second Columns
