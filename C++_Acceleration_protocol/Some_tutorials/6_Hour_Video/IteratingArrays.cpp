@@ -28,20 +28,9 @@ int mian(){
             } else {
                 std::cout << "Not found" << "\n";
             }
+    return 0;
             
 }
-
-
-double getTotal(double prices[], int size) { // Function receiving an array decays into a pointer and forgets the size of it 
-    // So we pass it as an additional parameter to the function. 
-    // The size of the array is not known to the function, so we must pass it as an additional parameter.
-    double total = 0.0;
-    for (int i = 0; i < size; ++i) {
-        total += prices[i];
-    }
-    return total;
-}
-
 
 
 int searchArray(int array[], int size, int element){
