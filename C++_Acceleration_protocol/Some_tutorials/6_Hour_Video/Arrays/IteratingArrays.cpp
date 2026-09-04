@@ -4,9 +4,9 @@
 
 int searchArray(int array[], int size, int element); // Function prototype for searching an array
 
-int mian(){
+int main(){
 
-            //---------------- Pass array to a function --------------------------------
+         //---------------- Pass array to a function --------------------------------
         // We can pass an array to a function by passing the name of the array
             double prices[] = {10.99, 5.99, 3.99, 6.59};
             int size = sizeof(prices)/sizeof(double);
@@ -42,3 +42,4 @@ int searchArray(int array[], int size, int element){
 
     }
 }
+

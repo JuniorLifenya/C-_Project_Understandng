@@ -304,6 +304,15 @@ int main()
         }
         //--------------------- Fill FUnction --------------------------------
         // fill() = fills a range of elements with a specified value fill(begin, end, value);
+        const int SIZE = 5;
+        std::string foods[SIZE];
+        std::fill(foods, foods + SIZE/2, "Pizza"); // Fills first half the array with the value "Pizza"
+        std::fill(foods + SIZE/2, foods + SIZE, "Hamburger"); // Fills the second half of the array with the value "Hamburger"
+
+        for (std::string food: foods)
+        {
+            std::cout << food << "\n";
+        }
 
     return 0;
 }
