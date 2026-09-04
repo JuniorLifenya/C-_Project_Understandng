@@ -14,7 +14,6 @@ using text_t = std::string;
 using number_t = int; // More suitable for templates
 double getTotal(double prices[],int size); // Function prototype for passing an array to a function
 
-
 int main()
 {
 
@@ -306,17 +305,6 @@ int main()
         }
          
 
-        //---------------- Pass array to a function --------------------------------
-        // We can pass an array to a function by passing the name of the array
-            double prices[] = {10.99, 5.99, 3.99, 6.59};
-            int size = sizeof(prices)/sizeof(double);
-            double total = getTotal(prices, size);
-            // Passing an array to a function is done by name
-
-        //---------------- Search in an array --------------------------------
-            
-
-
 
     return 0;
 }
@@ -330,3 +318,4 @@ double getTotal(double prices[], int size) { // Function receiving an array deca
     }
     return total;
 }
+
