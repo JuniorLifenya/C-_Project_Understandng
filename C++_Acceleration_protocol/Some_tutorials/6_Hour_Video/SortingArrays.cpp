@@ -8,6 +8,10 @@
 
 
 int main(){
+    
+    //-----We can also do this with a foreach loop in C++11 and later versions----
+    //foreach loop = loop that eases the traversal over an iterable data structure
+
     int array [] = {5, 2, 9, 1, 5, 6};
     int size = sizeof(array)/sizeof(array[0]); // Calculate the size of the array
 

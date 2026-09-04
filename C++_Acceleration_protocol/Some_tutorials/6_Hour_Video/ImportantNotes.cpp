@@ -296,15 +296,14 @@ int main()
             std::cout << grades2[i] << "\n"; // Calculate size and prints out all the elements in the array
         }
 
-        //-----We can also do this with a foreach loop in C++11 and later versions----
-        //foreach loop = loop that eases the traversal over an iterable data structure
+        
     
         int grades[] = {90, 85, 78, 92, 88};
         for (int grade: grades ){
             std::cout << grade << "\n"; // Prints all the elements in the array
         }
-         
-
+        //--------------------- Fill FUnction --------------------------------
+        // fill() = fills a range of elements with a specified value fill(begin, end, value);
 
     return 0;
 }
