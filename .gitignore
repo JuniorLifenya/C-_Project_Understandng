@@ -1,1 +1,4 @@
-/TheC++_Universe.cpp
+/TheC++_Universe.cpp*.exe
+*.o
+*.obj
+.vscode/

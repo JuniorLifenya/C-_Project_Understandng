@@ -12,6 +12,7 @@ typedef int number_t;
 typedef std::string text_; 
 using text_t = std::string; 
 using number_t = int; // More suitable for templates
+double getTotal(double prices[],int size); // Function prototype for passing an array to a function
 
 
 int main()
@@ -195,18 +196,137 @@ int main()
         // do some code first,
         // Then Repeat agin if conditions are true
     }while(name < 0);
-    // --------------------------------------------------------------------------
-    // A loop that executes code a specified amount of time 
+        // --------------------------------------------------------------------------
+        // A loop that executes code a specified amount of time 
 
     for (int i = 1; i <= 3; ++i) // We can Increment i+=3 for instance and so on with decrementation
     {
         std::cout << "Happy New Year";
     }
-    // -------------------- Break for switches...------------------
-    // -------------------- Continue skips the current iteration---
+        // -------------------- Break for switches...--------------------------------
+        // -------------------- Continue skips the current iteration---
 
-    
+        switch(player){
 
+        case "R":
+            if(computer == 'R'){
+                std::cout << "It's a tie!\n";
+            } else if(computer == 'P'){
+                std::cout << "Computer wins!\n";
+            } else {
+                std::cout << "You win!\n";
+            }
+            break;
+        case "P":
+            if(computer == 'R'){
+                std::cout << "You win!\n";
+            } else if(computer == 'P'){
+                std::cout << "It's a tie!\n";
+            } else {
+                std::cout << "Computer wins!\n";
+            }
+            break;
+        case "S":
+            if(computer == 'R'){
+                std::cout << "Computer wins!\n";
+            } else if(computer == 'P'){
+                std::cout << "You win!\n";
+            } else {
+                std::cout << "It's a tie!\n";
+            }
+            break;
+        default:
+            std::cout << "Invalid choice\n";
+        }   
+
+        //=========================================================================
+        // =================== Arrays and Sizes =====================
+
+        // -------------------- Array --------------------------------
+        // A data structure that  can hold multiple values
+        // Values are accessed by an index number
+        // Kind of like a variable that holds multiple values
+        std::string car[] = {"  Volvo", "BMW", "Ford", "Mazda"};
+
+        // Can Also insert values into an array like this:
+        std::string car[4];
+        // Assigning values later demands the size of the array to be specified
+        std::string car2[3] = {"Volvo", "BMW", "Ford"}; 
+        // Here we can specify the size of the array and insert values at the same time
+        car2[0] = "Volvo";
+        car2[1] = "BMW";
+        car2[2] = "Ford";
+        // car2[3] = "Mazda"; // This would be out of bounds
+
+        std::cout << car[0]; // Prints Volvo
+        std::cout << car[1]; // Prints BMW
+
+
+         // -------------------- Sizeof operator --------------------------------
+         // sizeof() = determines the size in bytes of a:
+         // variable, data type, or object
+
+        double x = 5.0;
+        std::cout << sizeof(x); // Prints 8 bytes
+
+        std::string name = "Bro";// Prints 32 bytes
+
+        char grade = 'A'; // Prints 1 byte
+        bool isMale = true; // Prints 1 byte
+        char grades[] = {'A', 'B', 'C', 'D', 'E'};
+        std::string names[] = {"Bro", "Bro2", "Bro3", "Bro4", "Bro5"};
+
+        std::cout << sizeof(grades); // Prints 5 bytes
+        std::cout << sizeof(grades/sizeof(char)) <<"Elements in the array \n"; 
+        // Calculates the number of elements in the array
+        // Calculates the number of elements in the array
+        std::cout << sizeof(names); // Prints 160 bytes
+        std::cout << sizeof(names)/sizeof(std::string) <<"Elements in the array \n";
+
+        //--------------------- Loops through arrays --------------------------------
+        std::string students[] = {"Bro", "Bro2", "Bro3", "Bro4", "Bro5"};
+        char grades2[] = {'A', 'B', 'C', 'D', 'E'};
+        
+        for (int i = 0; i < sizeof(students)/sizeof(std::string); ++i)
+        {
+            std::cout << students[i] << "\n"; // Calculate size and prints out all the elements in the array
+        }
+
+        for(int i = 0; i < sizeof(grades2)/sizeof(char); ++i)
+        {
+            std::cout << grades2[i] << "\n"; // Calculate size and prints out all the elements in the array
+        }
+
+        //-----We can also do this with a foreach loop in C++11 and later versions----
+        //foreach loop = loop that eases the traversal over an iterable data structure
     
+        int grades[] = {90, 85, 78, 92, 88};
+        for (int grade: grades ){
+            std::cout << grade << "\n"; // Prints all the elements in the array
+        }
+         
+
+        //---------------- Pass array to a function --------------------------------
+        // We can pass an array to a function by passing the name of the array
+            double prices[] = {10.99, 5.99, 3.99, 6.59};
+            int size = sizeof(prices)/sizeof(double);
+            double total = getTotal(prices, size);
+            // Passing an array to a function is done by name
+
+        //---------------- Search in an array --------------------------------
+            
+
+
+
     return 0;
+}
+
+double getTotal(double prices[], int size) { // Function receiving an array decays into a pointer and forgets the size of it 
+    // So we pass it as an additional parameter to the function. 
+    // The size of the array is not known to the function, so we must pass it as an additional parameter.
+    double total = 0.0;
+    for (int i = 0; i < size; ++i) {
+        total += prices[i];
+    }
+    return total;
 }
