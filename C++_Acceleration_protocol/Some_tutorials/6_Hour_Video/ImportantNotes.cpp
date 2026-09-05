@@ -16,6 +16,12 @@ double getTotal(double prices[],int size); // Function prototype for passing an 
 void walk (int steps); // Function prototype for passing a variable to a function
 void walk_recursive(int steps); // Function prototype for passing a variable to a function
 
+template <typename T> // Template for a function that can work with different data types
+T max(T a, T b) { // Function that returns the maximum of two values
+    return (a > b) ? a : b; // Ternary operator that returns a if a is greater than b, otherwise returns b
+}
+
+
 int main()
 {
 
@@ -342,6 +348,13 @@ int main()
 
         // Can Be used for example to traverse a tree data structure, or to solve a maze problem. 
         // Or even to calculate factorials or fibonacci numbers.
+
+        //---------------------- Function Templates --------------------------------
+        // Function templates = a blueprint for creating functions.
+        // Allows us to create a single function that can work with different data types.
+
+        std::cout << max(1,2) << "\n"; // Calls the max function with two integers
+
 
     return 0;
 }
