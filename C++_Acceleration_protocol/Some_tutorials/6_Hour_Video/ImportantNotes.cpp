@@ -313,6 +313,16 @@ int main()
         {
             std::cout << food << "\n";
         }
+        //--------------------- Constant Parameters --------------------------------
+        // const params =  parameter that is effectively read-only. 
+        //The function is not allowed to modify the value of the parameter.
+        // This is useful for passing large objects to a function without making a copy of the object.
+        std::string name = "Bro";
+        int age = 21;
+        printName(name, age); // Passes the string and age by reference to avoid making a copy of the objects. 
+        //The function is not allowed to modify the value of the parameters. 
+
+
 
     return 0;
 }
