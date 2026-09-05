@@ -13,6 +13,8 @@ typedef std::string text_;
 using text_t = std::string; 
 using number_t = int; // More suitable for templates
 double getTotal(double prices[],int size); // Function prototype for passing an array to a function
+void walk (int steps); // Function prototype for passing a variable to a function
+void walk_recursive(int steps); // Function prototype for passing a variable to a function
 
 int main()
 {
@@ -302,6 +304,10 @@ int main()
         for (int grade: grades ){
             std::cout << grade << "\n"; // Prints all the elements in the array
         }
+
+        //=========================================================================
+        // =================== Functions and More =====================
+
         //--------------------- Fill FUnction --------------------------------
         // fill() = fills a range of elements with a specified value fill(begin, end, value);
         const int SIZE = 5;
@@ -322,10 +328,37 @@ int main()
         printName(name, age); // Passes the string and age by reference to avoid making a copy of the objects. 
         //The function is not allowed to modify the value of the parameters. 
 
+        //---------------------- Recursion --------------------------------
+        // Recursion = when a function calls itself
+        // Used to break a problem down into smaller and smaller sub-problems until it becomes simple
+        // Good for searching and sorting algorithms, and traversing complex data structures.
+        // However, recursion can be slow and memory intensive...uses more memomry.
 
+        // Iterative vs Recursive functions
+        // Iterative = uses loops to repeat code until a condition is met
+
+        walk(100); // Calls the walk function with 100 steps
+        walk_recursive(100); // Calls the recursive walk function with 100 steps
+
+        // Can Be used for example to traverse a tree data structure, or to solve a maze problem. 
+        // Or even to calculate factorials or fibonacci numbers.
 
     return 0;
 }
+
+void walk_recursive(int steps){
+    if (steps > 0){
+        std::cout << "You take a step " << steps << "\n";
+        walk_recursive(steps - 1); // Calls the function again with one less step
+    }
+}
+
+void walk(int steps){
+    for (int i = 0; i < steps; ++i){
+        std::cout << "You take a Step " << i + 1 << "\n";
+    }
+}
+
 
 double getTotal(double prices[], int size) { // Function receiving an array decays into a pointer and forgets the size of it 
     // So we pass it as an additional parameter to the function. 
@@ -337,54 +370,3 @@ double getTotal(double prices[], int size) { // Function receiving an array deca
     return total;
 }
 
-int main2(){
-    //-----------------Memory Allocation and Pointers-------------------------------------
-    
-    // a location in memory where a value is stored. Each byte in memory has an address.
-    // a pointer is a variable that stores the memory address of another variable.
-    std::string food = "Pizza";
-    int age = 21;
-    bool student = true;
-    std::string* ptr = &food; // Pointer variable that stores the address of the
-    
-    // Prints out the hexidesimal memory adress of the variable food, age and student.
-    std::cout << &food << "\n"; // Prints the address of the food variable
-    std::cout << &age << "\n"; // Prints the address of the age variable
-    std::cout << &student << "\n"; // Prints the address of the student variable
-
-    std::cout << ptr << "\n"; // Prints the address of the food variable
-    
-    //-------------------------Dereferencing a pointer--------------------------------
-    // Dereferencing a pointer means accessing the value stored at the memory address that the pointer is
-    // pointing to. We use the * operator to dereference a pointer.
-    std::cout << *ptr << "\n"; // Prints the value of the food variable
-
-    //-------------------------Pointer Arithmetic--------------------------------
-    // Pointer arithmetic allows us to perform arithmetic operations on pointers.
-    int numbers[] = {10, 20, 30, 40, 50};
-    int* ptr2 = numbers; // Pointer variable that stores the address of the first element
-    std::cout << *ptr2 << "\n"; // Prints the value of the first element
-    ptr2++; // Increments the pointer to point to the next element
-    std::cout << *ptr2 << "\n"; // Prints the value of the second element
-    
-    //-------------------------Dynamic Memory Allocation--------------------------------
-    // Dynamic memory allocation allows us to allocate memory at runtime using the new operator.
-    int* ptr3 = new int; // Allocates memory for an integer and returns a pointer to it
-    *ptr3 = 10; // Assigns a value to the allocated memory
-    std::cout << *ptr3 << "\n"; // Prints the value of the allocated memory
-    delete ptr3; // Deallocates the memory allocated for the integer
-
-    //-------------------------Dynamic Arrays--------------------------------
-    // Dynamic arrays allow us to create arrays whose size can be determined at runtime.
-    int size;
-    std::cout << "Enter the size of the array: ";
-    std::cin >> size;
-    int* ptr4 = new int[size]; // Allocates memory for an array of integers and returns a pointer to it
-    for (int i = 0; i < size; ++i) {
-        ptr4[i] = i + 1; // Assigns values to the allocated array
-    }
-    for (int i = 0; i < size; ++i) {
-        std::cout << ptr4[i] << " "; // Prints the values of the allocated array
-    }
-    delete[] ptr4; // Deallocates the memory allocated for the array
-}
