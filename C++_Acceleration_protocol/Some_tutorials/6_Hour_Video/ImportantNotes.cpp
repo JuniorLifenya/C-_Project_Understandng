@@ -356,7 +356,7 @@ int main()
         // 2. Type safety: The compiler checks the types of the arguments at compile time.
         // 3. Reduced code duplication: Avoids writing multiple functions for different data types.
 
-         
+
 
 
 
